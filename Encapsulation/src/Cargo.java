@@ -1,10 +1,10 @@
 public class Cargo {
     final Dimensions dimensions;
-    final double weight; // Вес, кг
-    final String address; // Адрес доставки
-    final boolean overturn; // Можно ли переворачивать
-    final String regNumber; // Регистрационный номер
-    final boolean fragility; // Хрупкость
+    final double weight; // Р’РµСЃ, РєРі
+    final String address; // РђРґСЂРµСЃ РґРѕР°СЃС‚Р°РІРєРё
+    final boolean overturn; // РњРѕР¶РЅРѕ Р»Рё РїРµСЂРµРІРѕСЂР°С‡РёРІР°С‚СЊ
+    final String regNumber; // Р РµРіРёСЃС‚СЂР°С†РёРѕРЅРЅС‹Р№С‹ РЅРѕРјРµСЂ
+    final boolean fragility; // РҐСЂСѓРїРєРѕСЃС‚СЊ
 
 
     public Cargo(Dimensions dimensions, double weight, String address, boolean overturn, String regNumber, boolean fragility) {
