@@ -1,7 +1,7 @@
 public final class Dimensions {
-    final double length; // Длина
-    final double width; // Ширина
-    final double height; // Высота
+    final double length; // Р”Р»РёРЅР°, СЃРј
+    final double width; // РЁРёСЂРёРЅР°, СЃРј
+    final double height; // Р’С‹СЃРѕС‚Р°, СЃРј
 
     public Dimensions(double length, double width, double height) {
         this.length = length;
