@@ -7,23 +7,23 @@ public class MainCargo {
         Cargo newCargo;
 
         Dimensions dimensions = new Dimensions(10, 11, 1);
-        Cargo cargo = new Cargo(dimensions, 15, "куда-нибудь", true, "123", true);
+        Cargo cargo = new Cargo(dimensions, 15, "РєСѓРґР°-С‚Рѕ", true, "123", true);
 
         newCargo = cargo;
 
-        System.out.println("Внести изменения? (true/false)");
+        System.out.println("Г‚Г­ГҐГ±ГІГЁ ГЁГ§Г¬ГҐГ­ГҐГ­ГЁГї? (true/false)");
         setChanges = new Scanner(System.in).nextBoolean();
 
-        //Циклический возов изменения объекта с сохранением изменений
+        //Г–ГЁГЄГ«ГЁГ·ГҐГ±ГЄГЁГ© ГўГ®Г§Г®Гў ГЁГ§Г¬ГҐГ­ГҐГ­ГЁГї Г®ГЎГєГҐГЄГІГ  Г± Г±Г®ГµГ°Г Г­ГҐГ­ГЁГҐГ¬ ГЁГ§Г¬ГҐГ­ГҐГ­ГЁГ©
         while (setChanges) {
-            System.out.println("Куда внести изменения? (address,dimensions,weight)");
+            System.out.println("ГЉГіГ¤Г  ГўГ­ГҐГ±ГІГЁ ГЁГ§Г¬ГҐГ­ГҐГ­ГЁГї? (address,dimensions,weight)");
             String change = new Scanner(System.in).next();
             switch (change) {
                 case "address" -> {
-                    System.out.println("Введите адрес");
+                    System.out.println("Г‚ГўГҐГ¤ГЁГІГҐ Г Г¤Г°ГҐГ±");
                     String address = new Scanner(System.in).next();
 
-                    // Проверка на внесение изменений
+                    // ГЏГ°Г®ГўГҐГ°ГЄГ  Г­Г  ГўГ­ГҐГ±ГҐГ­ГЁГҐ ГЁГ§Г¬ГҐГ­ГҐГ­ГЁГ©
                     if (!changes) {
                         newCargo = cargo.setAddress(address);
                     } else {
@@ -31,11 +31,11 @@ public class MainCargo {
                     }
                 }
                 case "dimensions" -> {
-                    System.out.println("Введите длину");
+                    System.out.println("Г‚ГўГҐГ¤ГЁГІГҐ Г¤Г«ГЁГ­Гі");
                     double length = new Scanner(System.in).nextDouble();
-                    System.out.println("Введите высоту");
+                    System.out.println("Г‚ГўГҐГ¤ГЁГІГҐ ГўГ»Г±Г®ГІГі");
                     double width = new Scanner(System.in).nextDouble();
-                    System.out.println("Введите ширину");
+                    System.out.println("Г‚ГўГҐГ¤ГЁГІГҐ ГёГЁГ°ГЁГ­Гі");
                     double height = new Scanner(System.in).nextDouble();
                     if (!changes) {
                         newCargo = cargo.setDimensions(length, width, height);
@@ -44,7 +44,7 @@ public class MainCargo {
                     }
                 }
                 case "weight" -> {
-                    System.out.println("Введите вес");
+                    System.out.println("Г‚ГўГҐГ¤ГЁГІГҐ ГўГҐГ±");
                     double weight = new Scanner(System.in).nextDouble();
                     if (!changes) {
                         newCargo = cargo.setWeight(weight);
@@ -54,7 +54,7 @@ public class MainCargo {
                 }
             }
 
-            System.out.println("Внести изменения? (true/false)");
+            System.out.println("Г‚Г­ГҐГ±ГІГЁ ГЁГ§Г¬ГҐГ­ГҐГ­ГЁГї? (true/false)");
             setChanges = new Scanner(System.in).nextBoolean();
             printCargoInfo(cargo);
             printCargoInfo(newCargo);
@@ -62,17 +62,17 @@ public class MainCargo {
         }
     }
 
-    // Вывод информации о объекте
+    // Г‚Г»ГўГ®Г¤ ГЁГ­ГґГ®Г°Г¬Г Г¶ГЁГЁ Г® Г®ГЎГєГҐГЄГІГҐ
     public static void printCargoInfo(Cargo cargoObject) {
-        System.out.println("Объект " + cargoObject + " имеет параметры:" + "\n"
-                + "Длина:" + cargoObject.dimensions.length + "\n"
-                + "Ширина:" + cargoObject.dimensions.width + "\n"
-                + "Высота:" + cargoObject.dimensions.height + "\n"
-                + "Вес:" + cargoObject.weight + "\n"
-                + "Адрес доставки:" + cargoObject.address + "\n"
-                + "Можно ли переворачивать?:" + cargoObject.overturn + "\n"
-                + "Регистрационный номер:" + cargoObject.regNumber + "\n"
-                + "Хрупкость:" + cargoObject.fragility + "\n");
+        System.out.println("ГЋГЎГєГҐГЄГІ " + cargoObject + " ГЁГ¬ГҐГҐГІ ГЇГ Г°Г Г¬ГҐГІГ°Г»:" + "\n"
+                + "Г„Г«ГЁГ­Г :" + cargoObject.dimensions.length + "\n"
+                + "ГГЁГ°ГЁГ­Г :" + cargoObject.dimensions.width + "\n"
+                + "Г‚Г»Г±Г®ГІГ :" + cargoObject.dimensions.height + "\n"
+                + "Г‚ГҐГ±:" + cargoObject.weight + "\n"
+                + "ГЂГ¤Г°ГҐГ± Г¤Г®Г±ГІГ ГўГЄГЁ:" + cargoObject.address + "\n"
+                + "ГЊГ®Г¦Г­Г® Г«ГЁ ГЇГҐГ°ГҐГўГ®Г°Г Г·ГЁГўГ ГІГј?:" + cargoObject.overturn + "\n"
+                + "ГђГҐГЈГЁГ±ГІГ°Г Г¶ГЁГ®Г­Г­Г»Г© Г­Г®Г¬ГҐГ°:" + cargoObject.regNumber + "\n"
+                + "Г•Г°ГіГЇГЄГ®Г±ГІГј:" + cargoObject.fragility + "\n");
     }
 }
 
