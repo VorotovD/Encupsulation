@@ -11,19 +11,19 @@ public class MainCargo {
 
         newCargo = cargo;
 
-        System.out.println("Âíåñòè èçìåíåíèÿ? (true/false)");
+        System.out.println("Внести изменения? (true/false)");
         setChanges = new Scanner(System.in).nextBoolean();
 
-        //Öèêëè÷åñêèé âîçîâ èçìåíåíèÿ îáúåêòà ñ ñîõðàíåíèåì èçìåíåíèé
+        //Циклический вызов изменения объекта с сохранением изменений
         while (setChanges) {
-            System.out.println("Êóäà âíåñòè èçìåíåíèÿ? (address,dimensions,weight)");
+            System.out.println("Куда внести изменения? (address,dimensions,weight)");
             String change = new Scanner(System.in).next();
             switch (change) {
                 case "address" -> {
-                    System.out.println("Ââåäèòå àäðåñ");
+                    System.out.println("Введите адрес доставки");
                     String address = new Scanner(System.in).next();
 
-                    // Ïðîâåðêà íà âíåñåíèå èçìåíåíèé
+                    // Проверка на внесенные изменения
                     if (!changes) {
                         newCargo = cargo.setAddress(address);
                     } else {
@@ -31,11 +31,11 @@ public class MainCargo {
                     }
                 }
                 case "dimensions" -> {
-                    System.out.println("Ââåäèòå äëèíó");
+                    System.out.println("Введите длину груза");
                     double length = new Scanner(System.in).nextDouble();
-                    System.out.println("Ââåäèòå âûñîòó");
+                    System.out.println("Ведите ширину груза");
                     double width = new Scanner(System.in).nextDouble();
-                    System.out.println("Ââåäèòå øèðèíó");
+                    System.out.println("Введите выосту груза");
                     double height = new Scanner(System.in).nextDouble();
                     if (!changes) {
                         newCargo = cargo.setDimensions(length, width, height);
@@ -44,7 +44,7 @@ public class MainCargo {
                     }
                 }
                 case "weight" -> {
-                    System.out.println("Ââåäèòå âåñ");
+                    System.out.println("Введите вес груза");
                     double weight = new Scanner(System.in).nextDouble();
                     if (!changes) {
                         newCargo = cargo.setWeight(weight);
@@ -54,7 +54,7 @@ public class MainCargo {
                 }
             }
 
-            System.out.println("Âíåñòè èçìåíåíèÿ? (true/false)");
+            System.out.println("Внести изменения? (true/false)");
             setChanges = new Scanner(System.in).nextBoolean();
             printCargoInfo(cargo);
             printCargoInfo(newCargo);
@@ -62,17 +62,17 @@ public class MainCargo {
         }
     }
 
-    // Âûâîä èíôîðìàöèè î îáúåêòå
+    // Вывод информации о объекте
     public static void printCargoInfo(Cargo cargoObject) {
-        System.out.println("Îáúåêò " + cargoObject + " èìååò ïàðàìåòðû:" + "\n"
-                + "Äëèíà:" + cargoObject.dimensions.length + "\n"
-                + "Øèðèíà:" + cargoObject.dimensions.width + "\n"
-                + "Âûñîòà:" + cargoObject.dimensions.height + "\n"
-                + "Âåñ:" + cargoObject.weight + "\n"
-                + "Àäðåñ äîñòàâêè:" + cargoObject.address + "\n"
-                + "Ìîæíî ëè ïåðåâîðà÷èâàòü?:" + cargoObject.overturn + "\n"
-                + "Ðåãèñòðàöèîííûé íîìåð:" + cargoObject.regNumber + "\n"
-                + "Õðóïêîñòü:" + cargoObject.fragility + "\n");
+        System.out.println("Объект " + cargoObject + ". Параметры:" + "\n"
+                + "Длина:" + cargoObject.dimensions.length + "\n"
+                + "Ширина:" + cargoObject.dimensions.width + "\n"
+                + "Высота:" + cargoObject.dimensions.height + "\n"
+                + "Вес:" + cargoObject.weight + "\n"
+                + "Адрес доставки" + cargoObject.address + "\n"
+                + "Можно ли переворачивать?:" + cargoObject.overturn + "\n"
+                + "Регистрационный номер:" + cargoObject.regNumber + "\n"
+                + "Хрупкость:" + cargoObject.fragility + "\n");
     }
 }
 
