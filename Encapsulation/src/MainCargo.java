@@ -11,7 +11,7 @@ public class MainCargo {
 
         newCargo = cargo;
 
-        System.out.println("Внести изменения? (true/false)");
+        System.out.println("Внести изменения? (true / false)");
         setChanges = new Scanner(System.in).nextBoolean();
 
         //Циклический возов изменения объекта с сохранением изменений

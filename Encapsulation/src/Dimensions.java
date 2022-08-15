@@ -1,6 +1,6 @@
 public final class Dimensions {
     final double length; // Длина, см
-    final double width; // Ширина, см
+    final double width; // Ширина,  см
     final double height; // Высота, см
 
     public Dimensions(double length, double width, double height) {

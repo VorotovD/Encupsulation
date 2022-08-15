@@ -1,7 +1,7 @@
 public class Cargo {
     final Dimensions dimensions;
     final double weight; // Вес, кг
-    final String address; // Адрес доаставки
+    final String address; // Адрес  доаставки
     final boolean overturn; // Можно ли переворачивать
     final String regNumber; // Регистрационныйы номер
     final boolean fragility; // Хрупкость
